@@ -32,8 +32,7 @@ Whether it’s fixing a bug, adding a feature, improving docs, or writing tests 
 
    ```bash
    flutter pub get
-   flutter analyze
-   flutter test
+   flutter run
    ```
 6. **Commit & Push**:
 
@@ -51,7 +50,6 @@ Whether it’s fixing a bug, adding a feature, improving docs, or writing tests 
 * 🖼 **UI/UX**: Add new screens, improve existing widgets, animations, or theming.
 * ⚙️ **Features**:
 
-  * For **Thryve**: add motivational quote APIs, meditation timer enhancements, water reminder logic, health trackers.
   * For **Convoke**: event posting, registrations, verification, food/goodie tracking, certificates, event gallery.
 * 🐞 **Bug Fixes**: Resolve open issues from GitHub Issues tab.
 * 📖 **Documentation**: Improve README, add code comments, or write setup guides.
