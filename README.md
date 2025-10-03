@@ -40,6 +40,12 @@ Some starter tasks for contributors:
 - Add certificate generation service.  
 - Implement gallery upload & viewing UI.  
 - Build organizer dashboard.  
+- Add authentication & user profile management.
+- Implement live session/agenda schedule screen.
+- Create speaker details & session info module.
+- Implement feedback & rating system for events.
+- Build help & FAQs section.
+- Integrate social media sharing for event highlights.
 
 ---
 
