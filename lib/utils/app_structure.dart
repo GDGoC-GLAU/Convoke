@@ -53,60 +53,54 @@ class _AppStructureState extends State<AppStructure> {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.darkGreen,
-        statusBarColor: AppColors.darkGreen,
-        systemNavigationBarIconBrightness: Brightness.dark,
-      ),
-      child: ValueListenableBuilder(
-        valueListenable: _currentIndex,
-        builder:
-            (context, value, child) => Scaffold(
-              body: IndexedStack(index: _currentIndex.value, children: screens),
-              bottomNavigationBar: CustomNavigationBar(
-                currentIndex: value,
-                onTap: (index) => setState(() => _currentIndex.value = index),
-                backgroundColor: AppColors.darkGreen,
-                selectedColor: AppColors.lightGreen,
-                unSelectedColor: AppColors.lightGreen,
-                strokeColor: AppColors.lightGreen,
+    return ValueListenableBuilder(
+      valueListenable: _currentIndex,
+      builder: (context, value, child) => Scaffold(
+        body: IndexedStack(index: _currentIndex.value, children: screens),
+        bottomNavigationBar: SafeArea(
+          child: CustomNavigationBar(
+            currentIndex: value,
+            onTap: (index) => setState(() => _currentIndex.value = index),
+            backgroundColor: AppColors.darkGreen,
+            selectedColor: AppColors.lightGreen,
+            unSelectedColor: AppColors.lightGreen,
+            strokeColor: AppColors.lightGreen,
 
-                items: [
-                  CustomNavigationBarItem(
-                    icon: Icon(
-                      // _currentIndex.value == 0
-                      //     ?
-                      Icons.home,
-                      // : Icons.home_outlined,
-                    ),
-                    title: Text('Home', style: AppTextTheme.size12Normal),
-                  ),
-                  CustomNavigationBarItem(
-                    icon: Icon(
-                      // _currentIndex.value == 1
-                      //     ? Icons.account_balance_wallet
-                      //     :
-                      Icons.explore,
-                    ),
-                    title: Text('Explore', style: AppTextTheme.size12Normal),
-                  ),
-                  CustomNavigationBarItem(
-                    icon: Icon(Icons.favorite),
-                    title: Text('Saved', style: AppTextTheme.size12Normal),
-                  ),
-                  CustomNavigationBarItem(
-                    icon: Icon(
-                      // _currentIndex.value == 3
-                      //     ? CupertinoIcons.person_crop_circle_fill
-                      // :
-                      CupertinoIcons.person_crop_circle,
-                    ),
-                    title: Text('Profile', style: AppTextTheme.size12Normal),
-                  ),
-                ],
+            items: [
+              CustomNavigationBarItem(
+                icon: Icon(
+                  // _currentIndex.value == 0
+                  //     ?
+                  Icons.home,
+                  // : Icons.home_outlined,
+                ),
+                title: Text('Home', style: AppTextTheme.size12Normal),
               ),
-            ),
+              CustomNavigationBarItem(
+                icon: Icon(
+                  // _currentIndex.value == 1
+                  //     ? Icons.account_balance_wallet
+                  //     :
+                  Icons.explore,
+                ),
+                title: Text('Explore', style: AppTextTheme.size12Normal),
+              ),
+              CustomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                title: Text('Saved', style: AppTextTheme.size12Normal),
+              ),
+              CustomNavigationBarItem(
+                icon: Icon(
+                  // _currentIndex.value == 3
+                  //     ? CupertinoIcons.person_crop_circle_fill
+                  // :
+                  CupertinoIcons.person_crop_circle,
+                ),
+                title: Text('Profile', style: AppTextTheme.size12Normal),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
